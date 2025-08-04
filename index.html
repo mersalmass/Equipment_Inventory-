@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IXD Equipment's Inventory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Main Heading -->
+        <header class="text-center mb-8 md:mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900">IXD Equipment's Inventory</h1>
+            <p class="text-slate-500 mt-2">A vertically scrolling inventory of our design equipment.</p>
+            <!-- UPDATED: Total Equipment Count -->
+            <div class="mt-4 text-lg">
+                <p>Total Equipment: <span id="total-count" class="font-bold text-slate-800">0</span></p>
+            </div>
+        </header>
+
+        <!-- Vertically Scrolling Grid Container -->
+        <div class="grid grid-cols-2 gap-4 md:gap-6">
+            <!-- Equipment blocks now have unique IDs -->
+            <div id="Meta-Quest-3" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Meta Quest 3</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Projector" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Projector</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Meta-Quest-2" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Meta Quest 2</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Extension" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Extension</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="HDMI-Long-Cable" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">HDMI Long Cable</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="HDMI-Medium-Cables" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">HDMI Medium Cables</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Multipurpose-Connector" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Multipurpose Connector</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Monitor" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Monitor</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Arduino" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Arduino</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="High-Quality-USB-Cable" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">High Quality USB Cable</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Light-Stand" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Light Stand</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Insta-360" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Insta 360</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Video-Connector-Lamp" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Video Connector Lamp</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Professional-photography-film-RGB" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Professional photography film RGB</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="3-pin-Extension" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">3-pin Extension</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Tripod" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Tripod</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Studio-Background-Support-Kit" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Studio Background Support Kit</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="37-Sensor-Kit" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">37 Sensor Kit</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="3D-Printer-Filament" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">3D Printer Filament</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="DC-Pin" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">DC Pin</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Tape" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Tape</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Miscellaneous-Item-(arduino)" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Miscellaneous Item (arduino)</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="LED-Photography-Light" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">LED Photography Light</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+            <div id="Adjustable-Fill-Light" class="bg-white p-4 rounded-xl shadow-md flex flex-col justify-center items-center w-full h-36 transform transition-transform hover:scale-105 hover:shadow-lg border-4">
+                <span class="font-semibold text-center text-slate-700 mb-2">Adjustable Fill Light</span>
+                <div class="flex items-center justify-center space-x-2">
+                    <div class="status-dot w-3 h-3 rounded-full"></div>
+                    <span class="status-text text-sm font-medium"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This function runs when the page has finished loading
+        window.addEventListener('DOMContentLoaded', () => {
+            // This list of booleans controls the status.
+            // true = Available (green), false = Issued (red).
+            // The order MUST match the order of equipment in the HTML.
+            const availabilityStatus = [
+                true,  // Meta Quest 3
+                true, // Projector
+                true,  // Meta Quest 2
+                true,  // Extension
+                true, // HDMI Long Cable
+                true,  // HDMI Medium Cables
+                true,  // Multipurpose Connector
+                true, // Monitor
+                true, // Arduino
+                true,  // High Quality USB Cable
+                true,  // Light Stand
+                true, // Insta 360
+                true,  // Video Connector Lamp
+                true,  // Professional photography film RGB
+                true, // 3-pin Extension
+                true,  // Tripod
+                true, // Studio Background Support Kit
+                true,  // 37 Sensor Kit
+                true,  // 3D Printer Filament
+                true, // DC Pin
+                true,  // Tape
+                true,  // Miscellaneous Item (arduino)
+                true, // LED Photography Light
+                true   // Adjustable Fill Light
+            ];
+
+            // This list of IDs must match the IDs on the equipment divs above
+            const equipmentIds = [
+                'Meta-Quest-3', 'Projector', 'Meta-Quest-2', 'Extension', 'HDMI-Long-Cable',
+                'HDMI-Medium-Cables', 'Multipurpose-Connector', 'Monitor', 'Arduino', 'High-Quality-USB-Cable',
+                'Light-Stand', 'Insta-360', 'Video-Connector-Lamp', 'Professional-photography-film-RGB',
+                '3-pin-Extension', 'Tripod', 'Studio-Background-Support-Kit', '37-Sensor-Kit',
+                '3D-Printer-Filament', 'DC-Pin', 'Tape', 'Miscellaneous-Item-(arduino)',
+                'LED-Photography-Light', 'Adjustable-Fill-Light'
+            ];
+            
+            // --- UPDATED: Calculate and display total count ---
+            const totalCount = availabilityStatus.length;
+            document.getElementById('total-count').textContent = totalCount;
+            // --- End of updated code ---
+
+            // Loop through each status and update the corresponding HTML element
+            availabilityStatus.forEach((isAvailable, index) => {
+                const equipmentId = equipmentIds[index];
+                const equipmentBlock = document.getElementById(equipmentId);
+
+                if (equipmentBlock) {
+                    const statusDot = equipmentBlock.querySelector('.status-dot');
+                    const statusText = equipmentBlock.querySelector('.status-text');
+
+                    // Clear existing styles first
+                    equipmentBlock.classList.remove('border-green-500', 'border-red-500');
+                    statusDot.classList.remove('bg-green-500', 'bg-red-500');
+                    statusText.classList.remove('text-green-600', 'text-red-600');
+                    
+                    if (isAvailable) {
+                        // Apply AVAILABLE styles (green)
+                        equipmentBlock.classList.add('border-green-500');
+                        statusDot.classList.add('bg-green-500');
+                        statusText.textContent = 'Available';
+                        statusText.classList.add('text-green-600');
+                    } else {
+                        // Apply ISSUED styles (red)
+                        equipmentBlock.classList.add('border-red-500');
+                        statusDot.classList.add('bg-red-500');
+                        statusText.textContent = 'Issued';
+                        statusText.classList.add('text-red-600');
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
